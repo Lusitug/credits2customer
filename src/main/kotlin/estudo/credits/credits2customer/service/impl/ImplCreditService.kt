@@ -30,8 +30,8 @@ class ImplCreditService(private val creditRepository: CreditRepository,
             throw IllegalArgumentException("Contact Admin!")
     }
 
-    private fun validDayFirstQuota(dayFirstInstallment: LocalDate): Boolean {
-        return if (dayFirstInstallment.isBefore(LocalDate.now().plusMonths(3))) true
+    private fun validDayFirstQuota(dayFirstQuota: LocalDate): Boolean {
+        return if (dayFirstQuota.isBefore(LocalDate.now().plusMonths(3))) true
         else throw BusinessException("Invalid Date")
     }
 }

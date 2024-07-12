@@ -24,7 +24,7 @@ data class Credit(
     @Column(nullable = false)
     var dayFirstQuota: LocalDate,
     @Column(nullable = false)
-    var numberOfQuotas: Int = 0,
+    var numberOfInstallments: Int = 0,
     @Enumerated(EnumType.STRING) @Column(nullable = false)
     var status: Status = Status.IN_PROGRESS,
     @ManyToOne @JoinColumn(name =  "customer_id")

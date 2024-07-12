@@ -15,7 +15,6 @@ class ImplCustomerService(private val customerRepository: CustomerRepository): I
             throw BusinessException("ID $id does not exist")
         }
 
-
     override fun delete(id: Long) {
         val customer: Customer = this.findById(id)
         this.customerRepository.delete(customer)
